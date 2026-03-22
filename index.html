@@ -29,7 +29,10 @@
         <!-- header start -->
         <nav>
             <img src="images/shivam logo.png" alt="Shivam_yadavlogi" title="ved_prakash_logo">
-            <ul>
+            <div class="hamburger" id="hamburger">
+                <i class="bi bi-list"></i>
+            </div>
+            <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">My Skills</a></li>
@@ -252,6 +255,23 @@
 
     </div>
 
+
+    <!-- Hamburger Menu Script -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
