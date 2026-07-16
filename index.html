@@ -35,6 +35,8 @@
             <ul id="navMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#skills">My Skills</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -48,17 +50,15 @@
             </div>
         </nav>
         <!-- header end-->
-
         <!-- hero section start -->
-
-        <section id="Home">
+        <section id="home" class="reveal">
             <div class="hero-container">
-                <div class="profile-outer">
+                <div class="profile-outer reveal">
                     <div class="profile">
                         <img src="images/shiv intro.jpg" alt="shivamm yadav profil" title="shivam yadav">
                     </div>
                 </div>
-                <div class="info-outer">
+                <div class="info-outer reveal">
                     <h1>Hey, I'm Shivam Yadav.</h1>
                     <div class="typing">
                         <span></span>
@@ -73,7 +73,7 @@
 
         <!-- about section start -->
 
-        <section id="about">
+        <section id="about" class="reveal">
             <h1>About Me</h1>
             <hr />
             <div class="about-text">
@@ -100,7 +100,6 @@
                     PHP Developer at DigiCoders Technologies Pvt. Ltd. Prayagraj.</p>
                 <ul>
                     <li>Software Developer</li>
-
                     <li>Time Management</li>
                     <li>Cyber Security</li>
                     <li>Problem Solver</li>
@@ -112,7 +111,57 @@
 
         <!-- about section end -->
 
-        <section id="skills">
+        <section id="education" class="education-section reveal">
+            <h2>Education</h2>
+            <div class="line"></div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="year">Pursuing</div>
+                    <div class="content">
+                        <h3>Bachelor of Technology (B.Tech), Computer Science and Engineering</h3>
+                        <p>Currently pursuing with a strong focus on modern web technologies and software development.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="year">2026</div>
+                    <div class="content">
+                        <h3>Diploma in Computer Science Engineering (BTEUP)</h3>
+                        <p>Completed with 80% marks and a solid foundation in coding and system design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="year">2023</div>
+                    <div class="content">
+                        <h3>Intermediate (Class XII), B.P.O.I.C., Prayagraj</h3>
+                        <p>Completed with 76% marks and developed a strong academic base for higher studies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="year">2021</div>
+                    <div class="content">
+                        <h3>High School (Class X), B.P.O.I.C., Prayagraj</h3>
+                        <p>Completed with 90% marks and earned the school top rank recognition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements-section reveal">
+            <h2>Achievements</h2>
+            <div class="line"></div>
+            <div class="achievement-grid">
+                <div class="achievement-card reveal">
+                    <h3>School Top Rank</h3>
+                    <p>Secured the top rank in Class X during the 2021 academic year.</p>
+                </div>
+                <div class="achievement-card reveal">
+                    <h3>HCL Technology Prize</h3>
+                    <p>Received a prize from HCL Technologies for outstanding performance in a technical event.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
             <h1>my skills</h1>
             <hr />
             <div class="skill-outer">
@@ -148,7 +197,7 @@
 
 
         </section>
-        <section class="services" id="services">
+        <section class="services reveal" id="services">
             <h2>My Services</h2>
             <div class="line"></div>
 
@@ -182,7 +231,7 @@
                 </div>
             </div>
         </section>
-        <section class="projects" id="projects">
+        <section class="projects reveal" id="projects">
             <h2>Latest Projects</h2>
             <div class="line"></div>
 
@@ -202,7 +251,7 @@
 
             </div>
         </section>
-        <section class="contact" id="contact">
+        <section class="contact reveal" id="contact">
             <h2>Contact Me</h2>
             <div class="line"></div>
 
@@ -250,27 +299,61 @@
                 <p>Designed by Shivam Yadav <span>❤</span></p>
             </div>
         </footer>
-
-
-
     </div>
 
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
 
     <!-- Hamburger Menu Script -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
+        const revealElements = document.querySelectorAll('.reveal');
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
             });
         });
+
+        window.addEventListener('mousemove', (e) => {
+            cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorRing.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        document.querySelectorAll('a, button, input, textarea, .skill-box, .service-box, .project-box, .achievement-card, .timeline-item').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorDot.classList.add('active');
+                cursorRing.classList.add('active');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorDot.classList.remove('active');
+                cursorRing.classList.remove('active');
+            });
+        });
+
+        revealElements.forEach((el, index) => {
+            el.style.transitionDelay = `${Math.min(index * 120, 480)}ms`;
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
     </script>
 
     <!--Start of Tawk.to Script-->
