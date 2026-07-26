@@ -56,7 +56,7 @@ const Navbar = ({ activeSection, onToggleAi, theme, onToggleTheme, visitorCount 
         >
           <div className="relative">
             <img 
-              src="/images/shivam logo.png" 
+              src="/images/shivam-logo.png" 
               alt="Shivam Yadav" 
               className="h-10 w-10 rounded-full object-cover border-2 border-cyan-400/50 group-hover:border-cyan-400 transition-colors"
             />

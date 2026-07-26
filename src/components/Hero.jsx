@@ -130,7 +130,7 @@ const Hero = ({ onToggleAi, visitorCount }) => {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-gradient-to-tr from-cyan-400 via-purple-500 to-pink-500 shadow-2xl shadow-cyan-500/20">
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-slate-950 bg-slate-900">
                 <img 
-                  src="/images/shiv intro.jpg" 
+                  src="/images/shiv-intro.jpg" 
                   alt="Shivam Yadav" 
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />

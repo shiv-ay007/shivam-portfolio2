@@ -15,7 +15,7 @@ const Footer = ({ onToggleAi, visitorCount }) => {
           {/* Left Brand */}
           <div className="flex items-center gap-3">
             <img 
-              src="/images/shivam logo.png" 
+              src="/images/shivam-logo.png" 
               alt="Shivam Yadav" 
               className="h-9 w-9 rounded-full object-cover border border-cyan-500/40"
             />

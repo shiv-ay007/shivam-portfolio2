@@ -94,7 +94,7 @@ export const skills = [
   // { name: "PHP", level: 80, category: "Languages", icon: "/images/php.png" },
   // { name: "C Language", level: 78, category: "Languages", icon: "/images/c.png" },
   { name: "GitHub & Git", level: 90, category: "Tools", icon: "/images/github.jpg" },
-  { name: "HTML5 / CSS3", level: 96, category: "Frontend", icon: "/images/shivam logo.png" },
+  { name: "HTML5 / CSS3", level: 96, category: "Frontend", icon: "/images/shivam-logo.png" },
   { name: "REST APIs", level: 90, category: "Backend", icon: "/images/nodejs.svg" },
   // { name: "Cyber Security Basics", level: 75, category: "Tools", icon: "/images/download.jpg" }
 ];
